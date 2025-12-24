@@ -11,10 +11,9 @@
         "VARCHAR"
     ],
     "rest-client.environmentVariables": {
-        "$shared": {},
-        "dev": {
+        "$shared": {
             "base_url": "http://127.0.0.1:8000/api",
-            "menta_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzY2MzY5NzA0LCJpYXQiOjE3NjYxMTA1MDR9.m9RGzv-YmbYdlnCvGY5Z61OYCH15m7942N0A7kbKrkY"
-        }
+            "menta_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4IiwiZXhwIjoxNzY2ODExNzIyLCJpYXQiOjE3NjY1NTI1MjJ9.qTFTqaPsvg8jeB4KKUCmiRqP0KdsP_LYIR6Lwyl4abA"
+        },
     }
 }

@@ -18,8 +18,7 @@ use tower_http::{
 use tracing::info;
 
 use crate::{
-    config::config_model::DotEnvyConfig,
-    infrastructure::{database::postgresql_connection::PgPoolSquad, http::routers},
+    application::use_cases::brawlers::BrawlersUseCase, config::config_model::DotEnvyConfig, domain::{repositories::brawlers::BrawlerRepository, value_objects::brawler_model::RegisterBrawlerModel}, infrastructure::{database::postgresql_connection::PgPoolSquad, http::routers::{self, authentication::routes}}
 };
 
 fn static_serve() -> Router {
@@ -37,6 +36,7 @@ fn api_serve(db_pool: Arc<PgPoolSquad>) -> Router {
             "/mission-management",
             routers::mission_management::routes(Arc::clone(&db_pool)),
         )
+        .nest("/crew", routers::crew_operation::routes(Arc::clone(&db_pool)))
         .nest(
             "/authentication",
             routers::authentication::routes(Arc::clone(&db_pool)),
